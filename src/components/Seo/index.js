@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const Seo = ({ seo = {} }) => {
   const { strapiGlobal } = useStaticQuery(graphql`
-    query {
+    query{
       strapiGlobal {
         siteName
         favicon {

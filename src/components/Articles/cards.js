@@ -3,14 +3,14 @@ import { Flex, Text, Link } from "../ui"
 import { tagBox } from "./index.css" 
 import { ExternalLink } from  "react-feather";
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+// import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export default function Cards ({ article }) {
     return (
         <>
-            <Link className={tagBox} to={`${article.slug}`}>
+            <Link className={tagBox} to={`article/${article.slug}`}>
                 <Flex variant="columnStart">
-                    {/* <Text variant="subheading">{article.category}</Text> */}
+                    <Text variant="subheading">{article.publishedAt}</Text>
                     <Text variant="lead">{article.title}</Text>
                     <Text variant="body">{article.description}</Text>
                 </Flex>
@@ -26,6 +26,7 @@ export const query = graphql`
     slug
     title
     description
+    publishedAt
     cover {
       alternativeText
       localFile {

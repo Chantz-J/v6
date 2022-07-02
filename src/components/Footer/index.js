@@ -9,12 +9,7 @@ import { Container, Flex, Box, Text, Subhead } from "../ui"
     return (
         <Box as="footer" className={footerBorder}>
             <Container>
-                <Flex className={footerOutro}>
-                    <Subhead as="h2">
-                        Simple digital experiences <br></br> with a human-centered approach.
-                    </Subhead>
-                </Flex>
-
+                
                 <Flex variant="responsive" className={footerLinkSpacing}>
 
                 <Flex variant="spaceEvenly">
@@ -63,9 +58,15 @@ import { Container, Flex, Box, Text, Subhead } from "../ui"
 
                 </Flex>
 
+                <Flex className={footerOutro}>
+                    <Subhead as="h2">
+                        Simple digital experiences <br></br> with a human-centered approach.
+                    </Subhead>
+                </Flex>
+
                 <Flex className={copyRightSpacing}>
                     <Text>
-                        © 2022 Chantz, Inc. All rights reserved
+                        © 2022 Chantz Johnson. All rights reserved
                     </Text>
                 </Flex>
 

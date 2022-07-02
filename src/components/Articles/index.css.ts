@@ -8,6 +8,7 @@ export const tagBox = style({
     paddingRight: '20px',
     paddingLeft: '15px',
     border: `1px solid ${theme.colors.muted}`,
+    borderRadius: '3px',
     textDecoration: 'none',
     display: 'flex',
     flexDirection: 'column',

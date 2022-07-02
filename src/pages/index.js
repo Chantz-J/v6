@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout";
 import Synopsis from "../components/Synopsis";
 
 const IndexPage = () => { 
-  const { allStrapiArticle, strapiGlobal } = useStaticQuery(graphql`
+  const { allStrapiArticle, /*strapiGlobal*/ } = useStaticQuery(graphql`
     query {
       allStrapiArticle {
         nodes {

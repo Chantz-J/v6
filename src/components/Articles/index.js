@@ -7,9 +7,16 @@ export default function Articles ({ articles }) {
     return (
         <Section>
             <Container>
-                <Flex gap={4} variant="responsive" className={makeContainerGrid}>
+                <Flex 
+                    gap={4} 
+                    variant="responsive" 
+                    className={makeContainerGrid}
+                >
                     {articles.map((article) => (
-                        <Cards article={article} />
+                        <Cards 
+                            article={article} 
+                            key={article.id}
+                        />
                     ))}
                 </Flex>
             </Container>
