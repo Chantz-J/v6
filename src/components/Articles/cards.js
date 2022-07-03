@@ -8,7 +8,7 @@ import { graphql } from "gatsby"
 export default function Cards ({ article }) {
     return (
         <>
-            <Link className={tagBox} to={`article/${article.slug}`}>
+            <Link className={tagBox} to={`/article/${article.slug}`}>
                 <Flex variant="columnStart">
                     <Text variant="subheading">{article.publishedAt}</Text>
                     <Text variant="lead">{article.title}</Text>

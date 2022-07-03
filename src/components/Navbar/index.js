@@ -96,7 +96,7 @@ export default function Header() {
                 ))} */}
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/'}>About</NavLink>
-                <NavLink to={'/'}>Articles</NavLink>
+                <NavLink to={'/article'}>Articles</NavLink>
                 <NavLink to={'/'}>Contact</NavLink>
             </FlexList>
           </nav>
