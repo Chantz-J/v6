@@ -10,7 +10,7 @@ import { Container, Flex, Box, Text, Subhead } from "../ui"
         <Box as="footer" className={footerBorder}>
             <Container>
                 
-                <Flex variant="responsive" className={footerLinkSpacing}>
+                {/* <Flex variant="responsive" className={footerLinkSpacing}>
 
                 <Flex variant="spaceEvenly">
                     <Flex gap={4} variant="column">
@@ -56,7 +56,7 @@ import { Container, Flex, Box, Text, Subhead } from "../ui"
                     </Flex>
                 </Flex>
 
-                </Flex>
+                </Flex> */}
 
                 <Flex className={footerOutro}>
                     <Subhead as="h2">

@@ -7,7 +7,7 @@ module.exports = {
     title: `v6`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: ["gatsby-plugin-vanilla-extract", /*{
+  plugins: ["gatsby-plugin-vanilla-extract", /*"gatsby-plugin-support-chat",*/ /*{
     resolve: 'gatsby-plugin-google-analytics',
     options: {
       "trackingId": ""

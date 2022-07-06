@@ -2,6 +2,7 @@ import { Link as GatsbyLink } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import isAbsoluteURL from "is-absolute-url"
 import * as React from "react"
+import { colors } from "../colors.css"
 import * as styles from "./ui.css"
 
 export const cx = (...args) => args.filter(Boolean).join(" ")
@@ -145,10 +146,15 @@ export function Link({ to, href, ...props }) {
   if (isAbsoluteURL(url)) {
     return (
       // eslint-disable-next-line jsx-a11y/anchor-has-content
-      <a href={url} className={styles.link} {...props} />
+      <a href={url} className={styles.link} {...props} target="_blank"   rel="noopener" />
     )
   }
-  return <GatsbyLink to={url} className={styles.link} {...props} />
+  return <GatsbyLink 
+            to={url} 
+            className={styles.link} 
+            {...props} 
+            activeStyle={{ color: `${colors.secondary}` }}
+          />
 }
 
 export function NavLink({ ...props }) {

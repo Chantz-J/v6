@@ -1,10 +1,9 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby"
-import Articles from "../components/Articles";
 import Layout from "../layouts/Layout";
-import ArticleHero from "../components/ArticleHero";
+import ContactHero from "../components/ContactHero";
 
-const ArticlePage = () => { 
+const ContactPage = () => { 
   const { allStrapiArticle, /*strapiGlobal*/ } = useStaticQuery(graphql`
     query {
       allStrapiArticle {
@@ -20,10 +19,9 @@ const ArticlePage = () => {
   `)
   return (
     <Layout>
-      <ArticleHero />
-      <Articles articles={allStrapiArticle.nodes} />
+      <ContactHero />
     </Layout>
   );
 };
 
-export default ArticlePage;
+export default ContactPage;

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { maxWidthForContaniner } from "../BlockQuote/index.css";
-import { Section, Container, Flex, Heading, Subhead, Space } from "../ui";
+import { Section, Container, Flex, Heading, Subhead } from "../ui";
 
 export default function Header ({ article }){
     return (

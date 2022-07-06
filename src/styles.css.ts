@@ -1,5 +1,5 @@
-import { globalStyle, globalKeyframes } from "@vanilla-extract/css"
-import { theme } from "./theme.css"
+import { globalStyle, globalKeyframes } from "@vanilla-extract/css";
+import { theme } from "./theme.css";
 
 globalStyle("body", {
   margin: 0,

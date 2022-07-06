@@ -308,7 +308,7 @@ export const text: Record<TextVariants, string> = styleVariants({
       marginBottom: theme.space[3],
       fontFamily: theme.fonts.heading,
       fontSize: theme.fontSizes[5],
-      fontWeight: theme.fontWeights.normal,
+      fontWeight: theme.fontWeights.semibold,
       lineHeight: theme.lineHeights.heading,
       letterSpacing: theme.letterSpacings.tight,
       "@media": {
@@ -323,7 +323,7 @@ export const text: Record<TextVariants, string> = styleVariants({
     {
       marginBottom: theme.space[3],
       fontSize: theme.fontSizes[5],
-      fontWeight: theme.fontWeights.normal,
+      fontWeight: theme.fontWeights.medium,
       lineHeight: theme.lineHeights.tight,
       letterSpacing: theme.letterSpacings.tight,
     },
@@ -422,12 +422,14 @@ export const link = style({
 
 export const navlink = style({
   color: "inherit",
+  fontWeight: `${theme.fontWeights.medium}`,
+  fontSize: `${theme.fontSizes[3]}`,
   textDecoration: "none",
   transitionProperty: "color",
   transitionDuration: "0.2s",
   transitionTimingFunction: "ease-in-out",
   ":hover": {
-    color: theme.colors.active,
+    color: theme.colors.secondary,
   },
 })
 
@@ -465,7 +467,7 @@ export const blockLink = style({
 const button = style({
   display: "inline-flex",
   textDecoration: "none",
-  fontWeight: theme.fontWeights.bold,
+  fontWeight: theme.fontWeights.normal,
   fontSize: theme.fontSizes[2],
   lineHeight: theme.lineHeights.solid,
   paddingTop: theme.space[3],
@@ -481,20 +483,20 @@ export const buttons: Record<ButtonVariants, string> = styleVariants({
   primary: [
     button,
     {
-      color: theme.colors.background,
-      backgroundColor: theme.colors.primary,
+      color: theme.colors.secondary,
+      backgroundColor: theme.colors.background,
+      border: `1px solid ${theme.colors.muted}`,
       ":hover": {
-        backgroundColor: theme.colors.active,
+        backgroundColor: theme.colors.secondary,
+        color: theme.colors.background,
       },
-      ":focus": {
-        backgroundColor: theme.colors.active,
-      },
+
     },
   ],
   reversed: [
     button,
     {
-      color: theme.colors.primary,
+      color: theme.colors.background,
       backgroundColor: theme.colors.background,
       ":hover": {
         color: theme.colors.background,
@@ -511,10 +513,11 @@ export const buttons: Record<ButtonVariants, string> = styleVariants({
     {
       color: "inherit",
       backgroundColor: "transparent",
+      border: `1px solid ${theme.colors.muted}`,
       ":hover": {
         backgroundColor: theme.colors.muted,
       },
-      ":focus": {
+      ":first-child": {
         backgroundColor: theme.colors.muted,
       },
     },

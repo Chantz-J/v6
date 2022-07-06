@@ -97,7 +97,7 @@ export default function Header() {
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/'}>About</NavLink>
                 <NavLink to={'/article'}>Articles</NavLink>
-                <NavLink to={'/'}>Contact</NavLink>
+                <NavLink to={'/contact'}>Contact</NavLink>
             </FlexList>
           </nav>
           {/* <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div> */}

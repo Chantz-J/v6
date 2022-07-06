@@ -1,5 +1,6 @@
 import * as React from "react"
-import { Section, Container, Flex, Space, Heading, Subhead } from "../ui"
+import { Section, Container, Flex, Space, Heading, Subhead, Button } from "../ui"
+import { Linkedin, GitHub, Codepen, } from 'react-feather'
 
 export default function Hero () {
     return (
@@ -13,6 +14,17 @@ export default function Hero () {
                     <Subhead as="h2">
                        If coding is a form of lanaguage, then it needs to be capable of being understood.
                     </Subhead>
+                </Flex>
+                <Flex gap={4} variant="responsive">
+                    <Button variant="link" to={'https://www.linkedin.com/in/chantzjohnson/'}>
+                        <Linkedin />
+                    </Button>
+                    <Button variant="link" to={'https://github.com/Chantz-J'} >
+                        <GitHub />
+                    </Button>
+                    <Button variant="link" to={'https://codepen.io/Moon_River'}>
+                        <Codepen />
+                    </Button>
                 </Flex>
             </Container>
         </Section>

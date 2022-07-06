@@ -7,7 +7,9 @@ const Layout = (props) => {
   return (
     <>
       <Navbar />
-      {props.children}
+      <main>
+        {props.children}
+      </main>
       <Footer />
     </>
   );

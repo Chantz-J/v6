@@ -1,5 +1,5 @@
-import * as React from "react"
-import { Section, Container, Flex, Space, Heading, Subhead } from "../ui"
+import * as React from "react";
+import { Section, Container, Flex, Space, Heading, Subhead } from "../ui";
 
 export default function ArticleHero () {
     return (
@@ -16,5 +16,5 @@ export default function ArticleHero () {
                 </Flex>
             </Container>
         </Section>
-    )
-}
+    );
+};
