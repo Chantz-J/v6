@@ -1,24 +1,28 @@
 import * as React from "react";
 import { maxWidthForContaniner } from "../BlockQuote/index.css";
-import { Section, Container, Flex, Heading, Subhead } from "../ui";
+import { Section, Container, Flex, Heading, Kicker } from "../ui";
 
 export default function Header ({ article }){
     return (
         <Section>
-            <Container className={maxWidthForContaniner}>
-                <Flex gap={4} variant="responsive">
+            <Container>
+                <Flex>
+                    <Kicker>
+                        Published {article.publishedAt && (`${article.publishedAt}`)}
+                    </Kicker>
+                </Flex>
+                <Flex gap={4} variant="columnStart">
                     <Heading as="h1">
                         {article.title}
                     </Heading>
-                    {article.description && (
-                        <Subhead as="h2">
+                </Flex>
+                {article.description && (
+                    <Flex>
+                        <Kicker>
                             {article.description}
-                        </Subhead>
-                    )}
-                </Flex>
-                <Flex>
-                    Published {article.publishedAt && (`${article.publishedAt}`)}
-                </Flex>
+                        </Kicker>
+                    </Flex>
+                )}
             </Container>
         </Section>
     );

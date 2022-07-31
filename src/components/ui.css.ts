@@ -88,6 +88,10 @@ export const flexVariants: Record<FlexVariants, string> = styleVariants({
   baseline: {
     alignItems: "baseline",
   },
+  columnCenter: {
+    flexDirection: "column",
+    textAlign: "center",
+  },
   columnStart: {
     flexDirection: "column",
     alignItems: "flex-start",
@@ -268,8 +272,10 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       marginBottom: theme.space[3],
-      fontSize: theme.fontSizes[2],
+      fontSize: theme.fontSizes[4],
       fontWeight: theme.fontWeights.normal,
+      // color: "rgba(255,255,255,.88)",
+      color: theme.colors.quaternary,
       lineHeight: theme.lineHeights.text,
       letterSpacing: theme.letterSpacings.normal,
     },
@@ -287,14 +293,14 @@ export const text: Record<TextVariants, string> = styleVariants({
   superHeading: [
     margin0,
     {
-      textTransform: 'uppercase',
-      marginTop: theme.space[4],
+      color: "rgba(255, 255, 255, 0.96)",
+      marginTop: theme.space[5],
       marginBottom: theme.space[3],
-      fontSize: theme.fontSizes[5],
+      fontSize: theme.fontSizes[7],
       fontFamily: theme.fonts.heading,
       fontWeight: theme.fontWeights.extrabold,
       lineHeight: theme.lineHeights.heading,
-      letterSpacing: theme.letterSpacings.tight,
+      letterSpacing: theme.letterSpacings.normal,
       "@media": {
         [media.small]: {
           fontSize: theme.fontSizes[7],
@@ -308,9 +314,10 @@ export const text: Record<TextVariants, string> = styleVariants({
       marginBottom: theme.space[3],
       fontFamily: theme.fonts.heading,
       fontSize: theme.fontSizes[5],
-      fontWeight: theme.fontWeights.semibold,
+      fontWeight: theme.fontWeights.extrabold,
       lineHeight: theme.lineHeights.heading,
       letterSpacing: theme.letterSpacings.tight,
+      paddingBottom: theme.space[3],
       "@media": {
         [media.medium]: {
           fontSize: theme.fontSizes[6],
@@ -394,13 +401,16 @@ export const text: Record<TextVariants, string> = styleVariants({
   mega: [
     margin0,
     {
-      fontSize: "180px",
+      fontSize: theme.fontSizes[5],
       fontFamily: theme.fonts.mono,
       lineHeight: theme.lineHeights.solid,
       letterSpacing: theme.letterSpacings.tight,
       "@media": {
+        [media.small]: {
+          fontSize: "100px",
+        },
         [media.medium]: {
-          fontSize: "360px",
+          fontSize: "120px",
         },
       },
     },
@@ -421,15 +431,18 @@ export const link = style({
 })
 
 export const navlink = style({
-  color: "inherit",
-  fontWeight: `${theme.fontWeights.medium}`,
-  fontSize: `${theme.fontSizes[3]}`,
+  color: theme.colors.quaternary,
+  fontWeight: `${theme.fontWeights.semibold}`,
+  fontSize: `${theme.fontSizes[1]}`,
   textDecoration: "none",
   transitionProperty: "color",
   transitionDuration: "0.2s",
   transitionTimingFunction: "ease-in-out",
   ":hover": {
-    color: theme.colors.secondary,
+    color: theme.colors.text,
+  },
+  ":focus": {
+    color: theme.colors.text,
   },
 })
 
@@ -468,30 +481,48 @@ const button = style({
   display: "inline-flex",
   textDecoration: "none",
   fontWeight: theme.fontWeights.normal,
-  fontSize: theme.fontSizes[2],
+  fontSize: theme.fontSizes[1],
   lineHeight: theme.lineHeights.solid,
-  paddingTop: theme.space[3],
-  paddingBottom: theme.space[3],
+  paddingTop: theme.space[2],
+  paddingBottom: theme.space[2],
   paddingLeft: theme.space[3],
   paddingRight: theme.space[3],
-  borderRadius: theme.radii.button,
+  // borderRadius: theme.radii.button,
 })
 
-export type ButtonVariants = "primary" | "reversed" | "link" | "linkReversed"
+export type ButtonVariants = "primary" | "secondary" | "reversed" | "link" | "linkReversed"
 
 export const buttons: Record<ButtonVariants, string> = styleVariants({
   primary: [
     button,
     {
-      color: theme.colors.secondary,
+      color: theme.colors.primary,
       backgroundColor: theme.colors.background,
-      border: `1px solid ${theme.colors.muted}`,
-      ":hover": {
-        backgroundColor: theme.colors.secondary,
-        color: theme.colors.background,
-      },
+      fontWeight: `${theme.fontWeights.semibold}`,
+      padding: "15px 20px",
+      // border: `1px solid ${theme.colors.tertiary}`,
+      borderRadius: theme.radii.button,
+      // ":hover": {
+      //   backgroundColor: theme.colors.secondary,
+      //   color: theme.colors.background,
+      // },
 
     },
+  ],
+  secondary:[
+    button,
+    {
+      color: theme.colors.muted,
+      backgroundColor: theme.colors.quaternary,
+      fontSize: theme.fontSizes[1],
+      fontWeight: `${theme.fontWeights.semibold}`,
+      border: `1px solid ${theme.colors.quaternary}`,
+      borderRadius: theme.radii.button,
+      paddingTop: theme.space[3],
+      paddingBottom: theme.space[3],
+      paddingLeft: theme.space[4],
+      paddingRight: theme.space[4],
+    }
   ],
   reversed: [
     button,

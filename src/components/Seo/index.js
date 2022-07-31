@@ -1,6 +1,6 @@
 import React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 const Seo = ({ seo = {} }) => {
   const { strapiGlobal } = useStaticQuery(graphql`
@@ -23,18 +23,18 @@ const Seo = ({ seo = {} }) => {
         }
       }
     }
-  `)
+  `);
 
-  const { siteName, defaultSeo, favicon } = strapiGlobal
+  const { siteName, defaultSeo, favicon } = strapiGlobal;
 
   // Merge default and page-specific SEO values
-  const fullSeo = { ...defaultSeo, ...seo }
+  const fullSeo = { ...defaultSeo, ...seo };
 
   // Add site name to title
-  fullSeo.metaTitle = `${fullSeo.metaTitle} | ${siteName}`
+  fullSeo.metaTitle = `${fullSeo.metaTitle} | ${siteName}`;
 
   const getMetaTags = () => {
-    const tags = []
+    const tags = [];
 
     if (fullSeo.metaTitle) {
       tags.push(

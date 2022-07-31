@@ -26,15 +26,15 @@ const BlocksRenderer = ({ blocks }) => {
     return (
       <Section>
         <Container className={maxWidthForContaniner}>
-          <Flex variant="column">
+          <Flex variant={"columnStart"}>
             {blocks.map((block, index) => (
               <Block key={`${index}${block.__typename}`} block={block} />
             ))}
           </Flex>
         </Container>
       </Section>
-    )
-}
+    );
+};
 
 export const query = graphql`
   fragment Blocks on STRAPI__COMPONENT_SHARED_MEDIASTRAPI__COMPONENT_SHARED_QUOTESTRAPI__COMPONENT_SHARED_RICH_TEXTSTRAPI__COMPONENT_SHARED_SLIDERUnion {
@@ -76,5 +76,5 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 export default BlocksRenderer;

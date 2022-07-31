@@ -45,6 +45,9 @@ module.exports = {
           },
         },
         {
+          singularName: "resume",
+        },
+        {
           singularName: "author",
         },
         {

@@ -5,33 +5,32 @@ import Layout from "../layouts/Layout";
 import BlocksRenderer from "../components/BlocksRenderer";
 import Seo from "../components/Seo";
 import Header from "../components/Header";
-import { Container, Section } from "../components/ui";
-import { maxWidthForContaniner } from "../components/BlockQuote/index.css";
+import { Flex, FlexList, Section } from "../components/ui";
 
 const ArticlePage = ({ data }) => {
-    const article = data.strapiArticle
+    const article = data.strapiArticle;
 
     const seo = {
         metaTitle: article.title,
         metaDescription: article.description,
         shareImage: article.cover,
-    }
+    };
+
     return (
         <Layout>
-            <Seo seo={seo} />
-            <Header article={article}/>
-            <Section>
-              <Container className={maxWidthForContaniner}>
-                <GatsbyImage
-                  image={getImage(article?.cover?.localFile)}
-                  alt={article?.cover?.alternativeText}
-                />
-              </Container>
-            </Section>
-            <BlocksRenderer blocks={article.blocks || []} />
+          <Seo seo={seo} />
+          <Header article={article}/>
+          <Section>
+            <GatsbyImage
+              image={getImage(article?.cover?.localFile)}
+              alt={article?.cover?.alternativeText}
+              style={{ width: '100%'}}
+            />
+          </Section>
+          <BlocksRenderer blocks={article.blocks || []} />
         </Layout>
-    )
-}
+    );
+};
 
 export const pageQuery = graphql`
   query ($slug: String) {
@@ -40,6 +39,7 @@ export const pageQuery = graphql`
       slug
       title
       description
+      publishedAt(formatString: "YYYY-MM-DD")
       blocks {
         ...Blocks
       }
@@ -54,6 +54,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
 export default ArticlePage;

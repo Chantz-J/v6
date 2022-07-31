@@ -1,5 +1,4 @@
 import * as React from "react"
-// import { graphql, useStaticQuery } from "gatsby"
 import { Menu, X } from "react-feather"
 import {
   Container,
@@ -7,59 +6,19 @@ import {
   FlexList,
   Space,
   NavLink,
-  // Button,
   InteractiveIcon,
   Nudge,
   VisuallyHidden,
+  Button,
 } from "../ui"
 import {
   mobileNavOverlay,
-  // mobileNavLink,
   desktopHeaderNavWrapper,
   mobileHeaderNavWrapper,
   mobileNavSVGColorWrapper,
-  headerBorder,
 } from "../Navbar/index.css"
-// import NavItemGroup from "./nav-item-group"
 
-export default function Header() {
-//   const data = useStaticQuery(graphql`
-//     query {
-//       layout {
-//         header {
-//           id
-//           navItems {
-//             id
-//             navItemType
-//             ... on NavItem {
-//               href
-//               text
-//             }
-//             ... on NavItemGroup {
-//               name
-//               navItems {
-//                 id
-//                 href
-//                 text
-//                 description
-//                 icon {
-//                   alt
-//                   gatsbyImageData
-//                 }
-//               }
-//             }
-//           }
-//           cta {
-//             id
-//             href
-//             text
-//           }
-//         }
-//       }
-//     }
-//   `)
-
-//   const { navItems, cta } = data.layout.header
+export default function Header({}) {
   const [isOpen, setOpen] = React.useState(false)
 
   React.useEffect(() => {
@@ -71,36 +30,30 @@ export default function Header() {
   }, [isOpen])
 
   return (
-    <header className={headerBorder}>
+    <header /*className={headerBorder}*/>
       <Container className={desktopHeaderNavWrapper}>
         <Space size={2} />
         <Flex variant="spaceBetween">
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            Chantz.
-          </NavLink>
+            {/* <StaticImage 
+              src="../../images/icon.png" 
+              style={{ 
+                maxHeight: "70px",
+                maxWidth: "70px",
+              }}
+            /> */}
+            CHANTZ
+          </NavLink> 
           <nav>
             <FlexList gap={4}>
-              {/* {navItems &&
-                navItems.map((navItem) => (
-                  <li key={navItem.id}>
-                    {navItem.navItemType === "Group" ? (
-                      <NavItemGroup
-                        name={navItem.name}
-                        navItems={navItem.navItems}
-                      />
-                    ) : (
-                      <NavLink to={navItem.href}>{navItem.text}</NavLink>
-                    )}
-                  </li>
-                ))} */}
                 <NavLink to={'/'}>Home</NavLink>
-                <NavLink to={'/'}>About</NavLink>
                 <NavLink to={'/article'}>Articles</NavLink>
-                <NavLink to={'/contact'}>Contact</NavLink>
-            </FlexList>
+                <NavLink>
+                  <Button variant="primary">Resume</Button>
+                </NavLink>
+            </FlexList> 
           </nav>
-          {/* <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div> */}
         </Flex>
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
@@ -118,13 +71,6 @@ export default function Header() {
           </span>
           <Flex>
             <Space />
-            {/* <div>
-              {cta && (
-                <Button to={cta.href} variant={isOpen ? "reversed" : "primary"}>
-                  {cta.text}
-                </Button>
-              )}
-            </div> */}
             <Nudge right={3}>
               <InteractiveIcon
                 title="Toggle menu"

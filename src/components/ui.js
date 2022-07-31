@@ -125,16 +125,20 @@ export function Text({
   )
 }
 
+export function Mega({ ...props }){
+  return <Text as="h1" variant="mega" {...props} />
+}
+
 export function SuperHeading({ ...props }) {
   return <Text as="h1" variant="superHeading" {...props} />
 }
 
 export function Heading({ ...props }) {
-  return <Text as="h2" variant="heading" {...props} />
+  return <Text as="h1" variant="heading" {...props} />
 }
 
 export function Subhead({ ...props }) {
-  return <Text as="h3" variant="subhead" {...props} />
+  return <Text as="h2" variant="body" {...props} />
 }
 
 export function Kicker({ ...props }) {
@@ -153,7 +157,7 @@ export function Link({ to, href, ...props }) {
             to={url} 
             className={styles.link} 
             {...props} 
-            activeStyle={{ color: `${colors.secondary}` }}
+            // activeStyle={{ color: `${colors.secondary}` }}
           />
 }
 

@@ -3,10 +3,19 @@ import { useStaticQuery, graphql } from "gatsby"
 import Hero from "../components/Hero";
 import Articles from "../components/Articles";
 import Layout from "../layouts/Layout";
-import Synopsis from "../components/Synopsis";
+import Seo from "../components/Seo";
+
+// const components = [ Hero ]
+
+const FirstHero = () => <Hero />
+const SecondHero = () => <Hero />
+const ThirdHero = () => <Hero />
+
+const components = [ FirstHero, SecondHero, ThirdHero ] 
+
 
 const IndexPage = () => { 
-  const { allStrapiArticle, /*strapiGlobal*/ } = useStaticQuery(graphql`
+  const { allStrapiArticle } = useStaticQuery(graphql`
     query {
       allStrapiArticle {
         nodes {
@@ -21,9 +30,14 @@ const IndexPage = () => {
   `)
   return (
     <Layout>
+      <Seo seo={{ metaTitle: "Home" }} />
+      {
+        components.map(( Component, i) => {
+          <Component key={i}/>
+        })
+      }
       <Hero />
-      <Articles articles={allStrapiArticle.nodes} />
-      <Synopsis/>
+      <Articles articles={allStrapiArticle.nodes} /> 
     </Layout>
   );
 };

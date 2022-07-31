@@ -6,7 +6,7 @@ import { footerBorder } from "./index.css";
 
 export default function Footer () {
     return (
-        <Box as="footer" className={footerBorder}>
+        <Box as="footer" /*className={footerBorder}*/>
             <Container>
                 <Flex variant="responsive" className={footerLinkSpacing}>
                     <Flex className={footerOutro} variant="columnStart">
@@ -17,7 +17,7 @@ export default function Footer () {
                             © 2022 Chantz Johnson. All rights reserved
                         </Text>
                     </Flex>
-                    <Flex gap={4} variant="responsive">
+                    {/* <Flex gap={4} variant="responsive">
                         <Button variant="link" to={'https://www.linkedin.com/in/chantzjohnson/'}>
                             <Linkedin />
                         </Button>
@@ -27,7 +27,7 @@ export default function Footer () {
                         <Button variant="link" to={'https://codepen.io/Moon_River'}>
                             <Codepen />
                         </Button>
-                    </Flex>
+                    </Flex> */}
                 </Flex>
             </Container>
         </Box>

@@ -12,6 +12,7 @@ export default function BlockMedia ({ data }){
             <GatsbyImage
                 image={getImage(data.file?.localFile)}
                 alt={data.file?.alternativeText}
+                style={{ width: '100%'}}
             />
         )}
         </Container>

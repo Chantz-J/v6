@@ -3,7 +3,6 @@ import { theme } from "../../theme.css";
 
 export const blockQuoteStyles = style({
     borderLeftWidth: `1px`,
-    borderColor: `${theme.colors.black}`,
     color: `${theme.colors.black}`,
     fontStyle: 'italic',
     paddingLeft: `${theme.space[1]}`,

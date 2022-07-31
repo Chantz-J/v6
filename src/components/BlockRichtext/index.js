@@ -8,6 +8,7 @@ export default function BlockRichText ({ data }){
         dangerouslySetInnerHTML={{
           __html: data.richTextBody.data.childMarkdownRemark.html,
         }}
+        style={{ lineHeight: '1.5'}}
       />
     </Container>
   );
