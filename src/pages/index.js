@@ -4,14 +4,8 @@ import Hero from "../components/Hero";
 import Articles from "../components/Articles";
 import Layout from "../layouts/Layout";
 import Seo from "../components/Seo";
-
-// const components = [ Hero ]
-
-const FirstHero = () => <Hero />
-const SecondHero = () => <Hero />
-const ThirdHero = () => <Hero />
-
-const components = [ FirstHero, SecondHero, ThirdHero ] 
+import CTA from "../components/CTA";
+import Footer from "../components/Footer";
 
 
 const IndexPage = () => { 
@@ -31,13 +25,10 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo seo={{ metaTitle: "Home" }} />
-      {
-        components.map(( Component, i) => {
-          <Component key={i}/>
-        })
-      }
       <Hero />
       <Articles articles={allStrapiArticle.nodes} /> 
+      <CTA />
+      <Footer />
     </Layout>
   );
 };

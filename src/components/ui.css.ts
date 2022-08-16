@@ -123,6 +123,16 @@ export const flexVariants: Record<FlexVariants, string> = styleVariants({
       },
     },
   },
+  responsiveStart: {
+    flexDirection: "column",
+    alignItems: 'center',
+    "@media": {
+      [media.small]: {
+        flexDirection: "row",
+        alignItems: 'flex-start',
+      },
+    },
+  },
 })
 
 export const flexGap = styleVariants(theme.space, (gap) => ({ gap }))
@@ -272,7 +282,7 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       marginBottom: theme.space[3],
-      fontSize: theme.fontSizes[4],
+      fontSize: theme.fontSizes[3],
       fontWeight: theme.fontWeights.normal,
       // color: "rgba(255,255,255,.88)",
       color: theme.colors.quaternary,
@@ -297,7 +307,7 @@ export const text: Record<TextVariants, string> = styleVariants({
       marginTop: theme.space[5],
       marginBottom: theme.space[3],
       fontSize: theme.fontSizes[7],
-      fontFamily: theme.fonts.heading,
+      fontFamily: theme.fonts.text,
       fontWeight: theme.fontWeights.extrabold,
       lineHeight: theme.lineHeights.heading,
       letterSpacing: theme.letterSpacings.normal,
@@ -312,9 +322,9 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       marginBottom: theme.space[3],
-      fontFamily: theme.fonts.heading,
-      fontSize: theme.fontSizes[5],
-      fontWeight: theme.fontWeights.extrabold,
+      fontFamily: theme.fonts.text,
+      fontSize: theme.fontSizes[4],
+      fontWeight: theme.fontWeights.light,
       lineHeight: theme.lineHeights.heading,
       letterSpacing: theme.letterSpacings.tight,
       paddingBottom: theme.space[3],
@@ -330,7 +340,7 @@ export const text: Record<TextVariants, string> = styleVariants({
     {
       marginBottom: theme.space[3],
       fontSize: theme.fontSizes[5],
-      fontWeight: theme.fontWeights.medium,
+      fontWeight: theme.fontWeights.light,
       lineHeight: theme.lineHeights.tight,
       letterSpacing: theme.letterSpacings.tight,
     },
@@ -355,6 +365,19 @@ export const text: Record<TextVariants, string> = styleVariants({
       lineHeight: theme.lineHeights.tight,
       letterSpacing: theme.letterSpacings.wide,
       textTransform: "uppercase",
+    },
+  ],
+  bigKicker: [
+    margin0,
+    {
+      marginBottom: theme.space[2],
+      // fontFamily: theme.fonts.mono,
+      fontSize: theme.fontSizes[5],
+      fontWeight: theme.fontWeights.normal,
+      lineHeight: theme.lineHeights.tight,
+      letterSpacing: theme.letterSpacings.normal,
+      // textTransform: "uppercase",
+
     },
   ],
   caps: [
@@ -513,15 +536,19 @@ export const buttons: Record<ButtonVariants, string> = styleVariants({
     button,
     {
       color: theme.colors.muted,
-      backgroundColor: theme.colors.quaternary,
+      backgroundColor: theme.colors.tertiary,
       fontSize: theme.fontSizes[1],
       fontWeight: `${theme.fontWeights.semibold}`,
-      border: `1px solid ${theme.colors.quaternary}`,
+      // border: `1px solid ${theme.colors.quaternary}`,
       borderRadius: theme.radii.button,
       paddingTop: theme.space[3],
       paddingBottom: theme.space[3],
       paddingLeft: theme.space[4],
       paddingRight: theme.space[4],
+      ":hover": {
+        backgroundColor: theme.colors.text,
+        color: theme.colors.primary,
+      },
     }
   ],
   reversed: [

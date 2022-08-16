@@ -1,34 +1,36 @@
 import * as React from "react";
-import { Section, Container, Flex, Text, Link } from "../ui"
-import { cardBox, circleButton, forceNoTextDecoration } from "./index.css";
+import { Section, Container, Flex } from "../ui"
+import { cardBox, makeContainerGrid,makeContainerBigGrid, bigCardBox } from "./index.css";
+import Cards from "./cards";
 
 export default function Articles ({ articles }) {
-    const [ card, setCard ] = React.useState(0) // start on the first article
-    const { slug, publishedAt, title, description } = articles[card] 
+    const leftArticlesCount = Math.ceil(articles.length / 5)
+    const leftArticles = articles.slice(0, leftArticlesCount)
+    const rightArticles = articles.slice(leftArticlesCount, articles.length)
     return (
         <Section>
             <Container>
-                <Flex 
-                    gap={4} 
-                    variant="responsive" 
-                    className={cardBox}
-                >
-                    <Link to={`/article/${slug}`} className={forceNoTextDecoration}>
-                        <Container>
-                            <Flex variant="columnStart">
-                                <Text variant="subheading">{publishedAt}</Text>
-                                <Text variant="lead">{title}</Text>
-                                <Text variant="body">{description}</Text>
-                            </Flex>
-                        </Container>
-                    </Link>
-                    <Flex variant="column">
-                        {articles.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => setCard(index)}
-                                className={circleButton}
-                            ></button>
+                <Flex variant="responsiveStart">
+                    <Flex 
+                        className={makeContainerBigGrid}
+                    >
+                        {leftArticles.map((article) => (
+                            <Cards 
+                                article={article} 
+                                key={article.id}
+                                vanillaClass={bigCardBox}
+                            />
+                        ))}
+                    </Flex>
+                    <Flex 
+                        className={makeContainerGrid}
+                    >
+                        {rightArticles.map((article) => (
+                            <Cards 
+                                article={article} 
+                                key={article.id}
+                                vanillaClass={cardBox}
+                            />
                         ))}
                     </Flex>
                 </Flex>

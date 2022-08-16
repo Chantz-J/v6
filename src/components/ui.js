@@ -145,6 +145,10 @@ export function Kicker({ ...props }) {
   return <Text variant="kicker" {...props} />
 }
 
+export function BigKicker({ ...props }) {
+  return <Text as="h1" variant="bigKicker" {...props} />
+}
+
 export function Link({ to, href, ...props }) {
   const url = href || to || ""
   if (isAbsoluteURL(url)) {

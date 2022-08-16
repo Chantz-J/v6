@@ -1,39 +1,20 @@
 import * as React from "react";
 import { Flex, Text, Link, Container } from "../ui";
-import { cardBox, gradientCover, widthOneHundredPercent } from "./index.css";
+import { widthOneHundredPercent } from "./index.css";
 import { graphql } from "gatsby";
 
-export default function Cards ({ article }) {
-  const [ card, setCard ] = React.useState(0)
-  // const { slug, publishedAt, title } = article[card]
+export default function Cards ({ article, vanillaClass }) {
     return (
         <>
-          {/* <Link to={`/article/${article.slug}`}>
-              <Container className={cardBox}>
+          <Link to={`/article/${article.slug}`} className={vanillaClass}>
+              <Container>
                   <Flex variant="columnStart" className={widthOneHundredPercent}>
-                      <Container className={gradientCover} />
                       <Text variant="subheading">{article.publishedAt}</Text>
                       <Text variant="lead">{article.title}</Text>
+                      <Text variant="body">{article.description}</Text>
                   </Flex>
               </Container>
-          </Link> */}
-          {/* <Link to={`/article/${article.slug}`}>
-              <Container className={cardBox}>
-                  <Flex variant="columnStart" className={widthOneHundredPercent}>
-                      <Container className={gradientCover} />
-                      <Text variant="subheading">{article.publishedAt}</Text>
-                      <Text variant="lead">{article.title}</Text>
-                  </Flex>
-                  <Flex>
-                    {article.map((_, index) => (
-                      <button
-                        key={index}
-                        onclick={() => setCard(index)}
-                      />
-                    ))}
-                  </Flex>
-              </Container>
-          </Link> */}
+          </Link>
         </>
     )
 };
@@ -49,6 +30,7 @@ export const query = graphql`
     cover {
       alternativeText
       localFile {
+        url
         childImageSharp {
           gatsbyImageData(aspectRatio: 1.77)
         }

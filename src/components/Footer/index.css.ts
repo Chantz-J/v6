@@ -2,7 +2,7 @@ import { theme } from "../../theme.css"
 import { style } from "@vanilla-extract/css"
 
 export const footerBorder = style({
-  borderTop: `1px solid ${theme.colors.muted}`,
+  borderTop: `1px solid ${theme.colors.tertiary}`,
 })
 
 export const footerLinkSpacing = style({

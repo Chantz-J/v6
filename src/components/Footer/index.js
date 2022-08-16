@@ -1,12 +1,12 @@
 import * as React from "react";
-import { Container, Flex, Box, Text, Subhead, Button } from "../ui";
+import { Container, Flex, Box, Text, Subhead, Button, Heading } from "../ui";
 import { Linkedin, GitHub, Codepen, } from "react-feather";
 import { footerLinkSpacing, footerOutro } from "./index.css";
 import { footerBorder } from "./index.css";
 
 export default function Footer () {
     return (
-        <Box as="footer" /*className={footerBorder}*/>
+        <Box as="footer" className={footerBorder}>
             <Container>
                 <Flex variant="responsive" className={footerLinkSpacing}>
                     <Flex className={footerOutro} variant="columnStart">

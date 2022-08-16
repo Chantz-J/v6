@@ -8,7 +8,7 @@ export const cardBox = style({
     paddingRight: '20px',
     paddingLeft: '15px',
     // borderLeft: `13px solid ${theme.colors.secondary}`,
-    borderRadius: '7px',
+    borderRadius: '3px',
     textDecoration: 'none',
     display: 'flex',
     // flexDirection: 'column',
@@ -18,6 +18,7 @@ export const cardBox = style({
     fontSize: '13px',
     minHeight: '350px',
     // maxWidth: '230px',
+
     width: '100%',
     cursor: 'pointer',
     transition: 'all 0.25s ease-in-out',
@@ -26,7 +27,7 @@ export const cardBox = style({
     border: `1px solid ${theme.colors.tertiary}`,
 
     ":hover": {
-        background: theme.colors.secondary,
+        background: theme.colors.tertiary,
         color: theme.colors.background,
         boxShadow: `0 10px 30px -15px ${theme.colors.secondary}`,
         transform: 'translateY(-7px)',
@@ -35,26 +36,69 @@ export const cardBox = style({
       },
 });
 
+export const bigCardBox = style({
+  paddingTop: '15px',
+    paddingBottom: '15px',
+    // justifyContent: 'space-between',
+    paddingRight: '20px',
+    paddingLeft: '15px',
+    // borderLeft: `13px solid ${theme.colors.secondary}`,
+    borderRadius: '3px',
+    textDecoration: 'none',
+    display: 'flex',
+    // flexDirection: 'column',
+    // marginBottom: '10px',
+    alignItems: 'center',
+    justifyContent: "space-between",
+    fontSize: '13px',
+    minHeight: '715px',
+    // maxWidth: '230px',
+
+    width: '100%',
+    cursor: 'pointer',
+    transition: 'all 0.25s ease-in-out',
+    color: theme.colors.muted,
+    // background: theme.colors.tertiary,
+    border: `1px solid ${theme.colors.secondary}`,
+
+    ":hover": {
+        background: theme.colors.tertiary,
+        color: theme.colors.background,
+        boxShadow: `0 10px 30px -15px ${theme.colors.secondary}`,
+        transform: 'translateY(-7px)',
+        transition: 'all 0.25s ease-in-out',
+        
+      },
+})
+
 export const makeContainerGrid = style({
+  width: '100%',
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+  alignItems: 'flex-start',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
   whiteSpace: 'normal',
   gap: '15px',
   position: 'relative',
   scrollSnapType: 'none',
 });
 
+export const makeContainerBigGrid = style({
+  width: "100%",
+  display: 'grid',
+  alignItems: 'flex-start',
+  gridTemplateColumns: 'repeat(auto-fill, max(700px, 1fr))',
+  whiteSpace: 'normal',
+  gap: '15px',
+  position: 'relative',
+  scrollSnapType: 'none',
+});
+
+
 export const forceNoTextDecoration = style({
   textDecoration: "none",
   color: theme.colors.background,
 })
 
-export const gradientCover = style({
-  width: "100%",
-  minHeight: "200px",
-  backgroundColor: "hsla(0,100%,50%,1)",
-  backgroundImage: "radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%), radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0px, transparent 50%), radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%), radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0px, transparent 50%), radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%)",
-});
 
 export const widthOneHundredPercent = style({
   width: "100%",
@@ -72,10 +116,9 @@ export const circleButton = style({
   border: "none",
   cursor: "pointer",
   ":hover" : {
-    backgroundImage: "radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%), radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0px, transparent 50%), radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%), radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0px, transparent 50%), radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%)",
+    backgroundColor: theme.colors.muted,
   },
   ":focus" : {
-    backgroundColor: "hsla(0,100%,50%,1)",
-    backgroundImage: "radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%), radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0px, transparent 50%), radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%), radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0px, transparent 50%), radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%)",
+    backgroundColor: theme.colors.muted,
   }
 });

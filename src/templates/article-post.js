@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout";
 import BlocksRenderer from "../components/BlocksRenderer";
 import Seo from "../components/Seo";
 import Header from "../components/Header";
-import { Flex, FlexList, Section } from "../components/ui";
+import { Section } from "../components/ui";
 
 const ArticlePage = ({ data }) => {
     const article = data.strapiArticle;

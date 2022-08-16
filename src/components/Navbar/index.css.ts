@@ -3,7 +3,7 @@ import { theme } from "../../theme.css"
 import { media } from "../ui.css"
 
 export const headerBorder = style({
-  borderBottom: `1px solid ${theme.colors.muted}`,
+  borderBottom: `1px solid ${theme.colors.tertiary}`,
 })
 
 export const desktopHeaderNavWrapper = style({

@@ -31,13 +31,15 @@ const fontSizes = {
   1: "14px",
   2: "16px",
   3: "18px",
-  4: "24px",
+  4: "20px",
   5: "32px",
   6: "48px",
   7: "64px",
 }
 
 const fontWeights = {
+  veryLight: "200",
+  light: "300",
   normal: "400",
   medium: "500",
   semibold: "600",
@@ -46,7 +48,7 @@ const fontWeights = {
 }
 
 const fonts = {
-  text: '"DM Sans", sans-serif',
+  text: '"Metropolis", sans-serif',
   heading: '"DM Sans", sans-serif',
   mono: "DM Mono, Menlo, monospace",
 }
@@ -91,6 +93,7 @@ const shadows = {
 }
 
 export const theme = createGlobalTheme(":root", {
+  // vars,
   colors,
   space,
   fontSizes,
